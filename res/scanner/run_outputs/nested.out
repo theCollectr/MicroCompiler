@@ -1,0 +1,186 @@
+Token Type: null
+Value: PROGRAM
+Token Type: IDENTIFIER
+Value: nested
+Token Type: null
+Value: BEGIN
+Token Type: null
+Value: STRING
+Token Type: IDENTIFIER
+Value: dummy
+Token Type: null
+Value: :=
+Token Type: STRINGLITERAL
+Value: "abcde"
+Token Type: null
+Value: ;
+Token Type: null
+Value: INT
+Token Type: IDENTIFIER
+Value: i
+Token Type: null
+Value: ,
+Token Type: IDENTIFIER
+Value: j
+Token Type: null
+Value: ,
+Token Type: IDENTIFIER
+Value: k
+Token Type: null
+Value: ;
+Token Type: null
+Value: FUNCTION
+Token Type: null
+Value: VOID
+Token Type: IDENTIFIER
+Value: main
+Token Type: null
+Value: (
+Token Type: null
+Value: )
+Token Type: null
+Value: BEGIN
+Token Type: IDENTIFIER
+Value: i
+Token Type: null
+Value: :=
+Token Type: INTLITERAL
+Value: 0
+Token Type: null
+Value: ;
+Token Type: IDENTIFIER
+Value: j
+Token Type: null
+Value: :=
+Token Type: INTLITERAL
+Value: 0
+Token Type: null
+Value: ;
+Token Type: IDENTIFIER
+Value: k
+Token Type: null
+Value: :=
+Token Type: INTLITERAL
+Value: 0
+Token Type: null
+Value: ;
+Token Type: IDENTIFIER
+Value: result
+Token Type: null
+Value: :=
+Token Type: INTLITERAL
+Value: 0
+Token Type: null
+Value: ;
+Token Type: null
+Value: FOR
+Token Type: null
+Value: (
+Token Type: null
+Value: ;
+Token Type: IDENTIFIER
+Value: i
+Token Type: null
+Value: <=
+Token Type: INTLITERAL
+Value: 99
+Token Type: null
+Value: ;
+Token Type: IDENTIFIER
+Value: i
+Token Type: null
+Value: :=
+Token Type: IDENTIFIER
+Value: i
+Token Type: null
+Value: +
+Token Type: INTLITERAL
+Value: 1
+Token Type: null
+Value: ;
+Token Type: null
+Value: )
+Token Type: null
+Value: FOR
+Token Type: null
+Value: (
+Token Type: null
+Value: ;
+Token Type: IDENTIFIER
+Value: j
+Token Type: null
+Value: <=
+Token Type: INTLITERAL
+Value: 99
+Token Type: null
+Value: ;
+Token Type: IDENTIFIER
+Value: j
+Token Type: null
+Value: :=
+Token Type: IDENTIFIER
+Value: j
+Token Type: null
+Value: +
+Token Type: INTLITERAL
+Value: 1
+Token Type: null
+Value: )
+Token Type: null
+Value: FOR
+Token Type: null
+Value: (
+Token Type: null
+Value: ;
+Token Type: IDENTIFIER
+Value: k
+Token Type: null
+Value: <
+Token Type: INTLITERAL
+Value: 100
+Token Type: null
+Value: ;
+Token Type: IDENTIFIER
+Value: k
+Token Type: null
+Value: :=
+Token Type: IDENTIFIER
+Value: k
+Token Type: null
+Value: +
+Token Type: INTLITERAL
+Value: 1
+Token Type: null
+Value: )
+Token Type: IDENTIFIER
+Value: result
+Token Type: null
+Value: :=
+Token Type: IDENTIFIER
+Value: result
+Token Type: null
+Value: +
+Token Type: INTLITERAL
+Value: 1
+Token Type: null
+Value: ;
+Token Type: null
+Value: ENDFOR
+Token Type: null
+Value: ENDFOR
+Token Type: null
+Value: ENDFOR
+Token Type: null
+Value: WRITE
+Token Type: null
+Value: (
+Token Type: IDENTIFIER
+Value: result
+Token Type: null
+Value: )
+Token Type: null
+Value: ;
+Token Type: null
+Value: END
+Token Type: null
+Value: END
