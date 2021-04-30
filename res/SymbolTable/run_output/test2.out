@@ -1,0 +1,22 @@
+<<Scope Global>>
+name str1 type STRING value "test1"
+name a type INT
+name b type INT
+name c type INT
+name g type INT
+name h type INT
+name i type INT
+name j type INT
+name k type INT
+name l type INT
+name p type INT
+name o type INT
+name r type INT
+name u type INT
+name y type INT
+
+<<Scope main>>
+name str2 type STRING value "test2"
+name w type FLOAT
+name z type FLOAT
+name a type INT

@@ -1,0 +1,20 @@
+<<Scope Global>>
+name dummy type STRING value "abcde"
+name i type INT
+name result type INT
+
+<<Scope F>>
+name n type INT
+
+<<Scope BLOCK #1>>
+
+<<Scope BLOCK #2>>
+
+<<Scope BLOCK #3>>
+
+<<Scope main>>
+name i type INT
+name end type INT
+name result type INT
+
+<<Scope BLOCK #4>>

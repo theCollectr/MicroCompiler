@@ -1,4 +1,4 @@
-// Generated from C:/Users/zezon/IdeaProjects/MicroCompiler/res/micro\Micro.g4 by ANTLR 4.9.1
+// Generated from res/micro/Micro.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -34,11 +34,12 @@ public interface MicroVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitDecl(MicroParser.DeclContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MicroParser#string_decl}.
+	 * Visit a parse tree produced by the {@code StringDeclRule}
+	 * labeled alternative in {@link MicroParser#string_decl}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitString_decl(MicroParser.String_declContext ctx);
+	T visitStringDeclRule(MicroParser.StringDeclRuleContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MicroParser#str}.
 	 * @param ctx the parse tree
@@ -46,11 +47,12 @@ public interface MicroVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitStr(MicroParser.StrContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MicroParser#var_decl}.
+	 * Visit a parse tree produced by the {@code VariableDeclRule}
+	 * labeled alternative in {@link MicroParser#var_decl}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitVar_decl(MicroParser.Var_declContext ctx);
+	T visitVariableDeclRule(MicroParser.VariableDeclRuleContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MicroParser#var_type}.
 	 * @param ctx the parse tree
@@ -82,11 +84,12 @@ public interface MicroVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitParam_decl_list(MicroParser.Param_decl_listContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MicroParser#param_decl}.
+	 * Visit a parse tree produced by the {@code ParameterDeclRule}
+	 * labeled alternative in {@link MicroParser#param_decl}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitParam_decl(MicroParser.Param_declContext ctx);
+	T visitParameterDeclRule(MicroParser.ParameterDeclRuleContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MicroParser#param_decl_tail}.
 	 * @param ctx the parse tree
@@ -100,11 +103,12 @@ public interface MicroVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFunc_declarations(MicroParser.Func_declarationsContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MicroParser#func_decl}.
+	 * Visit a parse tree produced by the {@code FuncDeclRule}
+	 * labeled alternative in {@link MicroParser#func_decl}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFunc_decl(MicroParser.Func_declContext ctx);
+	T visitFuncDeclRule(MicroParser.FuncDeclRuleContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MicroParser#func_body}.
 	 * @param ctx the parse tree
@@ -160,17 +164,26 @@ public interface MicroVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitReturn_stmt(MicroParser.Return_stmtContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MicroParser#if_stmt}.
+	 * Visit a parse tree produced by the {@code IfStmtRule}
+	 * labeled alternative in {@link MicroParser#if_stmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitIf_stmt(MicroParser.If_stmtContext ctx);
+	T visitIfStmtRule(MicroParser.IfStmtRuleContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MicroParser#else_part}.
+	 * Visit a parse tree produced by the {@code ElseStmtRule}
+	 * labeled alternative in {@link MicroParser#else_part}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitElse_part(MicroParser.Else_partContext ctx);
+	T visitElseStmtRule(MicroParser.ElseStmtRuleContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code ElseEpsilonRule}
+	 * labeled alternative in {@link MicroParser#else_part}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitElseEpsilonRule(MicroParser.ElseEpsilonRuleContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MicroParser#cond}.
 	 * @param ctx the parse tree
@@ -184,11 +197,12 @@ public interface MicroVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitCompare(MicroParser.CompareContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MicroParser#for_stmt}.
+	 * Visit a parse tree produced by the {@code ForStmtRule}
+	 * labeled alternative in {@link MicroParser#for_stmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFor_stmt(MicroParser.For_stmtContext ctx);
+	T visitForStmtRule(MicroParser.ForStmtRuleContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MicroParser#init_expr}.
 	 * @param ctx the parse tree

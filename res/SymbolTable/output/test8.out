@@ -1,0 +1,31 @@
+<<Scope Global>>
+name a type INT
+name b type INT
+name c type INT
+name d type INT
+
+<<Scope printout>>
+name a type INT
+name b type INT
+name c type INT
+name e type INT
+name f type INT
+name g type INT
+
+<<Scope main>>
+name d type STRING value "test"
+
+<<Scope BLOCK #1>>
+name dummy1 type FLOAT
+
+<<Scope BLOCK #2>>
+name i type INT
+
+<<Scope BLOCK #3>>
+name dummy2 type FLOAT
+
+<<Scope BLOCK #4>>
+name dummy3 type FLOAT
+
+<<Scope BLOCK #5>>
+name dummy4 type INT
