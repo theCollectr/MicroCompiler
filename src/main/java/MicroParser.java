@@ -1,4 +1,4 @@
-// Generated from C:/Users/zezon/IdeaProjects/MicroCompiler/res/micro\Micro.g4 by ANTLR 4.9.1
+// Generated from res/micro/Micro.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast"})
 public class MicroParser extends Parser {
-	static { RuntimeMetaData.checkVersion("4.9.1", RuntimeMetaData.VERSION); }
+	static { RuntimeMetaData.checkVersion("4.9.2", RuntimeMetaData.VERSION); }
 
 	protected static final DFA[] _decisionToDFA;
 	protected static final PredictionContextCache _sharedContextCache =
@@ -317,19 +317,29 @@ public class MicroParser extends Parser {
 	}
 
 	public static class String_declContext extends ParserRuleContext {
+		public String_declContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_string_decl; }
+	 
+		public String_declContext() { }
+		public void copyFrom(String_declContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class StringDeclRuleContext extends String_declContext {
+		public IdContext name;
+		public StrContext value;
 		public IdContext id() {
 			return getRuleContext(IdContext.class,0);
 		}
 		public StrContext str() {
 			return getRuleContext(StrContext.class,0);
 		}
-		public String_declContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_string_decl; }
+		public StringDeclRuleContext(String_declContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitString_decl(this);
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitStringDeclRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -338,16 +348,17 @@ public class MicroParser extends Parser {
 		String_declContext _localctx = new String_declContext(_ctx, getState());
 		enterRule(_localctx, 8, RULE_string_decl);
 		try {
+			_localctx = new StringDeclRuleContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(106);
 			match(T__3);
 			setState(107);
-			id();
+			((StringDeclRuleContext)_localctx).name = id();
 			setState(108);
 			match(T__4);
 			setState(109);
-			str();
+			((StringDeclRuleContext)_localctx).value = str();
 			setState(110);
 			match(T__5);
 			}
@@ -398,19 +409,29 @@ public class MicroParser extends Parser {
 	}
 
 	public static class Var_declContext extends ParserRuleContext {
+		public Var_declContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_var_decl; }
+	 
+		public Var_declContext() { }
+		public void copyFrom(Var_declContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class VariableDeclRuleContext extends Var_declContext {
+		public Var_typeContext type;
+		public Id_listContext names;
 		public Var_typeContext var_type() {
 			return getRuleContext(Var_typeContext.class,0);
 		}
 		public Id_listContext id_list() {
 			return getRuleContext(Id_listContext.class,0);
 		}
-		public Var_declContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_var_decl; }
+		public VariableDeclRuleContext(Var_declContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitVar_decl(this);
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitVariableDeclRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -419,12 +440,13 @@ public class MicroParser extends Parser {
 		Var_declContext _localctx = new Var_declContext(_ctx, getState());
 		enterRule(_localctx, 12, RULE_var_decl);
 		try {
+			_localctx = new VariableDeclRuleContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(114);
-			var_type();
+			((VariableDeclRuleContext)_localctx).type = var_type();
 			setState(115);
-			id_list();
+			((VariableDeclRuleContext)_localctx).names = id_list();
 			setState(116);
 			match(T__5);
 			}
@@ -688,19 +710,29 @@ public class MicroParser extends Parser {
 	}
 
 	public static class Param_declContext extends ParserRuleContext {
+		public Param_declContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_param_decl; }
+	 
+		public Param_declContext() { }
+		public void copyFrom(Param_declContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class ParameterDeclRuleContext extends Param_declContext {
+		public Var_typeContext type;
+		public IdContext name;
 		public Var_typeContext var_type() {
 			return getRuleContext(Var_typeContext.class,0);
 		}
 		public IdContext id() {
 			return getRuleContext(IdContext.class,0);
 		}
-		public Param_declContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_param_decl; }
+		public ParameterDeclRuleContext(Param_declContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitParam_decl(this);
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitParameterDeclRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -709,12 +741,13 @@ public class MicroParser extends Parser {
 		Param_declContext _localctx = new Param_declContext(_ctx, getState());
 		enterRule(_localctx, 24, RULE_param_decl);
 		try {
+			_localctx = new ParameterDeclRuleContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(140);
-			var_type();
+			((ParameterDeclRuleContext)_localctx).type = var_type();
 			setState(141);
-			id();
+			((ParameterDeclRuleContext)_localctx).name = id();
 			}
 		}
 		catch (RecognitionException re) {
@@ -839,11 +872,20 @@ public class MicroParser extends Parser {
 	}
 
 	public static class Func_declContext extends ParserRuleContext {
+		public Func_declContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_func_decl; }
+	 
+		public Func_declContext() { }
+		public void copyFrom(Func_declContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class FuncDeclRuleContext extends Func_declContext {
+		public IdContext name;
 		public Any_typeContext any_type() {
 			return getRuleContext(Any_typeContext.class,0);
-		}
-		public IdContext id() {
-			return getRuleContext(IdContext.class,0);
 		}
 		public Param_decl_listContext param_decl_list() {
 			return getRuleContext(Param_decl_listContext.class,0);
@@ -851,13 +893,13 @@ public class MicroParser extends Parser {
 		public Func_bodyContext func_body() {
 			return getRuleContext(Func_bodyContext.class,0);
 		}
-		public Func_declContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
+		public IdContext id() {
+			return getRuleContext(IdContext.class,0);
 		}
-		@Override public int getRuleIndex() { return RULE_func_decl; }
+		public FuncDeclRuleContext(Func_declContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitFunc_decl(this);
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitFuncDeclRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -866,6 +908,7 @@ public class MicroParser extends Parser {
 		Func_declContext _localctx = new Func_declContext(_ctx, getState());
 		enterRule(_localctx, 30, RULE_func_decl);
 		try {
+			_localctx = new FuncDeclRuleContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(156);
@@ -873,7 +916,7 @@ public class MicroParser extends Parser {
 			setState(157);
 			any_type();
 			setState(158);
-			id();
+			((FuncDeclRuleContext)_localctx).name = id();
 			setState(159);
 			match(T__11);
 			setState(160);
@@ -1353,6 +1396,17 @@ public class MicroParser extends Parser {
 	}
 
 	public static class If_stmtContext extends ParserRuleContext {
+		public If_stmtContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_if_stmt; }
+	 
+		public If_stmtContext() { }
+		public void copyFrom(If_stmtContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class IfStmtRuleContext extends If_stmtContext {
 		public CondContext cond() {
 			return getRuleContext(CondContext.class,0);
 		}
@@ -1365,13 +1419,10 @@ public class MicroParser extends Parser {
 		public Else_partContext else_part() {
 			return getRuleContext(Else_partContext.class,0);
 		}
-		public If_stmtContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_if_stmt; }
+		public IfStmtRuleContext(If_stmtContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitIf_stmt(this);
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitIfStmtRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1380,6 +1431,7 @@ public class MicroParser extends Parser {
 		If_stmtContext _localctx = new If_stmtContext(_ctx, getState());
 		enterRule(_localctx, 50, RULE_if_stmt);
 		try {
+			_localctx = new IfStmtRuleContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(209);
@@ -1412,19 +1464,35 @@ public class MicroParser extends Parser {
 	}
 
 	public static class Else_partContext extends ParserRuleContext {
+		public Else_partContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_else_part; }
+	 
+		public Else_partContext() { }
+		public void copyFrom(Else_partContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class ElseStmtRuleContext extends Else_partContext {
 		public DeclContext decl() {
 			return getRuleContext(DeclContext.class,0);
 		}
 		public Stmt_listContext stmt_list() {
 			return getRuleContext(Stmt_listContext.class,0);
 		}
-		public Else_partContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_else_part; }
+		public ElseStmtRuleContext(Else_partContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitElse_part(this);
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitElseStmtRule(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class ElseEpsilonRuleContext extends Else_partContext {
+		public ElseEpsilonRuleContext(Else_partContext ctx) { copyFrom(ctx); }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitElseEpsilonRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1437,6 +1505,7 @@ public class MicroParser extends Parser {
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__18:
+				_localctx = new ElseStmtRuleContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(218);
@@ -1448,6 +1517,7 @@ public class MicroParser extends Parser {
 				}
 				break;
 			case T__17:
+				_localctx = new ElseEpsilonRuleContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				}
@@ -1556,6 +1626,17 @@ public class MicroParser extends Parser {
 	}
 
 	public static class For_stmtContext extends ParserRuleContext {
+		public For_stmtContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_for_stmt; }
+	 
+		public For_stmtContext() { }
+		public void copyFrom(For_stmtContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class ForStmtRuleContext extends For_stmtContext {
 		public Init_exprContext init_expr() {
 			return getRuleContext(Init_exprContext.class,0);
 		}
@@ -1571,13 +1652,10 @@ public class MicroParser extends Parser {
 		public Stmt_listContext stmt_list() {
 			return getRuleContext(Stmt_listContext.class,0);
 		}
-		public For_stmtContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_for_stmt; }
+		public ForStmtRuleContext(For_stmtContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitFor_stmt(this);
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitForStmtRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1586,6 +1664,7 @@ public class MicroParser extends Parser {
 		For_stmtContext _localctx = new For_stmtContext(_ctx, getState());
 		enterRule(_localctx, 58, RULE_for_stmt);
 		try {
+			_localctx = new ForStmtRuleContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(231);

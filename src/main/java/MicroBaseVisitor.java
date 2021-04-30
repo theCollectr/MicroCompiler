@@ -1,4 +1,4 @@
-// Generated from C:/Users/zezon/IdeaProjects/MicroCompiler/res/micro\Micro.g4 by ANTLR 4.9.1
+// Generated from res/micro/Micro.g4 by ANTLR 4.9.2
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -44,7 +44,7 @@ public class MicroBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitString_decl(MicroParser.String_declContext ctx) { return visitChildren(ctx); }
+	@Override public T visitStringDeclRule(MicroParser.StringDeclRuleContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -58,7 +58,7 @@ public class MicroBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitVar_decl(MicroParser.Var_declContext ctx) { return visitChildren(ctx); }
+	@Override public T visitVariableDeclRule(MicroParser.VariableDeclRuleContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -100,7 +100,7 @@ public class MicroBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitParam_decl(MicroParser.Param_declContext ctx) { return visitChildren(ctx); }
+	@Override public T visitParameterDeclRule(MicroParser.ParameterDeclRuleContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -121,7 +121,7 @@ public class MicroBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFunc_decl(MicroParser.Func_declContext ctx) { return visitChildren(ctx); }
+	@Override public T visitFuncDeclRule(MicroParser.FuncDeclRuleContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -191,14 +191,21 @@ public class MicroBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitIf_stmt(MicroParser.If_stmtContext ctx) { return visitChildren(ctx); }
+	@Override public T visitIfStmtRule(MicroParser.IfStmtRuleContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitElse_part(MicroParser.Else_partContext ctx) { return visitChildren(ctx); }
+	@Override public T visitElseStmtRule(MicroParser.ElseStmtRuleContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitElseEpsilonRule(MicroParser.ElseEpsilonRuleContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -219,7 +226,7 @@ public class MicroBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements 
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitFor_stmt(MicroParser.For_stmtContext ctx) { return visitChildren(ctx); }
+	@Override public T visitForStmtRule(MicroParser.ForStmtRuleContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

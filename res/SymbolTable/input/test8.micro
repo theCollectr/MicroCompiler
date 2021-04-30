@@ -1,0 +1,37 @@
+PROGRAM test
+BEGIN
+	INT a, b , c , d;
+	FUNCTION VOID printout (INT a,INT b,INT c)
+	BEGIN
+		INT e, f, g;
+		e := a + 1;
+		f := b + 2;
+		g := c + 3;
+		WRITE (e);
+		WRITE (f);
+		WRITE (g);
+	END
+
+  FUNCTION INT main()
+	BEGIN
+	STRING d := "test";
+	IF (a = b)
+	   FLOAT dummy1;
+	   c := a;
+	ELSE
+	    INT i;
+	    FOR (i := 1; i<=10 ; i := i + 1)
+		   FLOAT dummy2;
+	       IF (a = b)
+			   FLOAT dummy3;
+			   c := a + b ;
+		   ELSE
+			   INT dummy4;
+			   c := a - b ;
+ 		   ENDIF
+		   	
+	    ENDFOR
+	ENDIF
+	RETURN c;
+	END
+END

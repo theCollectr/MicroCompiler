@@ -3,8 +3,11 @@
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
+import org.antlr.v4.runtime.tree.ParseTree;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class Driver {
     public static void main(String[] args) {
@@ -19,12 +22,9 @@ public class Driver {
         }
 
         MicroParser parser = new MicroParser(new CommonTokenStream(lexer));
-        parser.program();
-
-        if (parser.getNumberOfSyntaxErrors() == 0) {
-            System.out.println("accepted");
-        } else {
-            System.out.println("not accepted");
-        }
+        ParseTree tree = parser.program();
+        SymbolTableVisitor symbolTableVisitor = new SymbolTableVisitor();
+        symbolTableVisitor.visit(tree);
+        System.out.print(symbolTableVisitor.getSymbolTable().toString());
     }
 }
