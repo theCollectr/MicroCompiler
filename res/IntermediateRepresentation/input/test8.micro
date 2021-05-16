@@ -1,0 +1,34 @@
+PROGRAM test8
+BEGIN
+
+	FLOAT a,b,k,g,p,u;
+	STRING newline := "\n";
+	
+	FUNCTION INT main()
+	BEGIN
+
+		a := 10.2;
+		b := 11.4;
+        FOR ( ; a <= 80 ; )
+			IF (b = 1)
+				g := 1*a;
+				WRITE (g, newline);
+			ENDIF
+			IF (b = 2)
+				p := 2*a;
+				WRITE (p, newline);
+			ENDIF
+			IF (b = 3)
+				k := 3*a;
+				WRITE (k, newline);
+			ELSE
+				u := 4*a;
+				WRITE (u, newline);
+			ENDIF
+			b := b + 1;
+			a := a + 20;
+		ENDFOR
+	
+		WRITE (a, newline, b, newline);
+	END
+END

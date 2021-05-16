@@ -1,0 +1,44 @@
+LABEL  main
+STOREF  1.0  x
+STOREF  2.0  y
+STOREF  3.14159  z
+WRITEF  x
+WRITES  newline
+WRITEF  z
+WRITES  newline
+WRITEF  y
+WRITES  newline
+DIVF  z  2.0  $T1
+STOREF  $T1  x
+DIVF  z  y  $T2
+STOREF  $T2  y
+WRITEF  x
+WRITES  newline
+WRITEF  y
+WRITES  newline
+ADDF  x  y  $T3
+ADDF  $T3  z  $T4
+DIVF  $T4  z  $T5
+STOREF  $T5  t
+WRITEF  t
+WRITES  newline
+MULTF  t  t  $T6
+ADDF  $T6  1  $T7
+STOREF  $T7  t
+WRITEF  t
+WRITES  newline
+ADDF  t  z  $T8
+ADDF  $T8  t  $T9
+DIVF  t  2.0  $T10
+ADDF  $T9  $T10  $T11
+DIVF  z  4.0  $T12
+ADDF  $T11  $T12  $T13
+DIVF  z  5.0  $T14
+ADDF  $T13  $T14  $T15
+DIVF  z  6.0  $T16
+ADDF  $T15  $T16  $T17
+DIVF  z  7.0  $T18
+ADDF  $T17  $T18  $T19
+STOREF  $T19  t
+WRITEF  t
+WRITES  newline

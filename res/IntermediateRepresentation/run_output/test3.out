@@ -1,0 +1,54 @@
+LABEL  main
+STOREI  1  a
+STOREI  2  b
+STOREI  10  c
+STOREI  20  d
+WRITEI  a
+WRITES  newline
+WRITEI  b
+WRITES  newline
+WRITEI  c
+WRITES  newline
+WRITEI  d
+WRITES  newline
+ADDI  a  b  $T1
+STOREI  $T1  a
+WRITEI  a
+WRITES  newline
+MULTI  a  c  $T2
+STOREI  $T2  b
+WRITEI  b
+WRITES  newline
+SUBI  0  a  $T3
+ADDI  $T3  b  $T4
+STOREI  $T4  c
+WRITEI  c
+WRITES  newline
+SUBI  0  d  $T5
+STOREI  $T5  d
+WRITEI  d
+WRITES  newline
+ADDI  a  b  $T6
+ADDI  d  c  $T7
+MULTI  $T6  $T7  $T8
+ADDI  a  b  $T9
+ADDI  $T9  c  $T10
+ADDI  $T10  d  $T11
+DIVI  $T11  a  $T12
+SUBI  $T8  $T12  $T13
+STOREI  $T13  a
+WRITEI  a
+WRITES  newline
+ADDI  a  10  $T14
+STOREI  $T14  a
+WRITEI  a
+WRITES  newline
+ADDI  b  a  $T15
+ADDI  $T15  10  $T16
+STOREI  $T16  b
+WRITEI  b
+WRITES  newline
+SUBI  0  10  $T17
+STOREI  $T17  c
+WRITEI  c
+WRITES  newline

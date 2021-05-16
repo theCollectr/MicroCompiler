@@ -1,0 +1,22 @@
+PROGRAM test5
+BEGIN
+
+	INT a,d;
+	STRING msg1 := "enter an integer";
+	STRING msg2 := "factorial is ";
+	STRING newline := "\n";
+	
+	FUNCTION INT main()
+	BEGIN
+			
+		WRITE(msg1, newline);
+		READ(a);
+	
+		d := 1;
+		FOR ( ; a > 1; a := a - 1 )
+		   d := d * a;
+	    ENDFOR	    
+		WRITE(msg2, d, newline);
+
+	END
+END

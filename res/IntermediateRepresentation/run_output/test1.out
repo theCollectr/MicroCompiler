@@ -1,0 +1,16 @@
+LABEL  main
+STOREI  1  a
+STOREI  2  b
+WRITES  msg1
+WRITES  newline
+READI  c
+WRITES  msg2
+WRITES  newline
+READI  d
+MULTI  a  c  $T1
+MULTI  b  d  $T2
+ADDI  $T1  $T2  $T3
+STOREI  $T3  e
+WRITES  msg3
+WRITEI  e
+WRITES  newline

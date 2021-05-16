@@ -19,6 +19,24 @@ public class Scope {
         symbols.add(symbol);
     }
 
+    public String getType(String name) {
+        for (Symbol symbol : symbols) {
+            if (symbol.getName().equals(name)) {
+                return symbol.getType();
+            }
+        }
+        return null;
+    }
+
+    public Symbol getSymbol(String name) {
+        for (Symbol symbol : symbols) {
+            if (symbol.getName().equals(name)) {
+                return symbol;
+            }
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();

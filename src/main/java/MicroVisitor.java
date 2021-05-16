@@ -140,23 +140,26 @@ public interface MicroVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAssign_stmt(MicroParser.Assign_stmtContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MicroParser#assign_expr}.
+	 * Visit a parse tree produced by the {@code AssignExprRule}
+	 * labeled alternative in {@link MicroParser#assign_expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitAssign_expr(MicroParser.Assign_exprContext ctx);
+	T visitAssignExprRule(MicroParser.AssignExprRuleContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MicroParser#read_stmt}.
+	 * Visit a parse tree produced by the {@code ReadStmtRule}
+	 * labeled alternative in {@link MicroParser#read_stmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitRead_stmt(MicroParser.Read_stmtContext ctx);
+	T visitReadStmtRule(MicroParser.ReadStmtRuleContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MicroParser#write_stmt}.
+	 * Visit a parse tree produced by the {@code WriteStmtRule}
+	 * labeled alternative in {@link MicroParser#write_stmt}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitWrite_stmt(MicroParser.Write_stmtContext ctx);
+	T visitWriteStmtRule(MicroParser.WriteStmtRuleContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MicroParser#return_stmt}.
 	 * @param ctx the parse tree
@@ -185,11 +188,12 @@ public interface MicroVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitElseEpsilonRule(MicroParser.ElseEpsilonRuleContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MicroParser#cond}.
+	 * Visit a parse tree produced by the {@code CondRule}
+	 * labeled alternative in {@link MicroParser#cond}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitCond(MicroParser.CondContext ctx);
+	T visitCondRule(MicroParser.CondRuleContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MicroParser#compare}.
 	 * @param ctx the parse tree
@@ -216,41 +220,89 @@ public interface MicroVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitIncr_expr(MicroParser.Incr_exprContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MicroParser#expr}.
+	 * Visit a parse tree produced by the {@code ExprRule}
+	 * labeled alternative in {@link MicroParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExpr(MicroParser.ExprContext ctx);
+	T visitExprRule(MicroParser.ExprRuleContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MicroParser#expr_prefix}.
+	 * Visit a parse tree produced by the {@code ExprPrefixEpsRule}
+	 * labeled alternative in {@link MicroParser#expr_prefix}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitExpr_prefix(MicroParser.Expr_prefixContext ctx);
+	T visitExprPrefixEpsRule(MicroParser.ExprPrefixEpsRuleContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MicroParser#term}.
+	 * Visit a parse tree produced by the {@code ExprPrefixRule}
+	 * labeled alternative in {@link MicroParser#expr_prefix}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTerm(MicroParser.TermContext ctx);
+	T visitExprPrefixRule(MicroParser.ExprPrefixRuleContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MicroParser#factor_prefix}.
+	 * Visit a parse tree produced by the {@code TermRule}
+	 * labeled alternative in {@link MicroParser#term}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFactor_prefix(MicroParser.Factor_prefixContext ctx);
+	T visitTermRule(MicroParser.TermRuleContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MicroParser#factor}.
+	 * Visit a parse tree produced by the {@code FactorPrefixRule}
+	 * labeled alternative in {@link MicroParser#factor_prefix}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitFactor(MicroParser.FactorContext ctx);
+	T visitFactorPrefixRule(MicroParser.FactorPrefixRuleContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link MicroParser#primary}.
+	 * Visit a parse tree produced by the {@code FactorPrefixEpsRule}
+	 * labeled alternative in {@link MicroParser#factor_prefix}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitPrimary(MicroParser.PrimaryContext ctx);
+	T visitFactorPrefixEpsRule(MicroParser.FactorPrefixEpsRuleContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code FactorPrimaryRule}
+	 * labeled alternative in {@link MicroParser#factor}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFactorPrimaryRule(MicroParser.FactorPrimaryRuleContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code FactorCallExprRule}
+	 * labeled alternative in {@link MicroParser#factor}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFactorCallExprRule(MicroParser.FactorCallExprRuleContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code PrimaryExprRule}
+	 * labeled alternative in {@link MicroParser#primary}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPrimaryExprRule(MicroParser.PrimaryExprRuleContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code PrimaryIDRule}
+	 * labeled alternative in {@link MicroParser#primary}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPrimaryIDRule(MicroParser.PrimaryIDRuleContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code PrimaryINTRule}
+	 * labeled alternative in {@link MicroParser#primary}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPrimaryINTRule(MicroParser.PrimaryINTRuleContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code PrimaryFLOATRule}
+	 * labeled alternative in {@link MicroParser#primary}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPrimaryFLOATRule(MicroParser.PrimaryFLOATRuleContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link MicroParser#call_expr}.
 	 * @param ctx the parse tree

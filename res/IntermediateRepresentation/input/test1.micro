@@ -1,0 +1,25 @@
+PROGRAM test1
+BEGIN
+
+	INT a,b,c,d,e;
+	STRING msg1 := "enter integer1";
+	STRING msg2 := "enter integer2";
+	STRING msg3 := "result is ";
+	STRING newline := "\n";
+
+	FUNCTION VOID main()
+	BEGIN
+		a := 1;
+		b := 2;
+
+		  WRITE(msg1, newline);
+          READ(c);
+          WRITE(msg2, newline);
+          READ(d);
+
+          e := a * c + b * d;
+          
+          WRITE(msg3, e, newline);
+
+	END	
+END

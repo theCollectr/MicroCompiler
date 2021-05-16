@@ -25,6 +25,9 @@ public class Driver {
         ParseTree tree = parser.program();
         SymbolTableVisitor symbolTableVisitor = new SymbolTableVisitor();
         symbolTableVisitor.visit(tree);
-        System.out.print(symbolTableVisitor.getSymbolTable().toString());
+
+        IRVisitor irVisitor = new IRVisitor(symbolTableVisitor.getSymbolTable());
+        irVisitor.visit(tree);
+        System.out.print(irVisitor.getIntermediateRepresentation());
     }
 }

@@ -1,0 +1,27 @@
+PROGRAM test6
+BEGIN
+
+	INT count1,count2,result;
+	INT j,k;
+	STRING newline := "\n";
+	
+	FUNCTION VOID main()
+	BEGIN
+		count1 := 7;
+		count2 := 9;	
+		result := 0;
+		
+		FOR(j:=1; j<count1; j:=j+1)
+			FOR(k:=1; k<count2; k:=k+1)
+				IF(k > j)
+					result := result + j * k;
+				ENDIF
+				IF(k = j)
+					result := result - j * k;
+				ENDIF
+			ENDFOR
+		ENDFOR
+
+		WRITE(result,newline);
+	END
+END

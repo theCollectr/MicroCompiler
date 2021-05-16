@@ -1,0 +1,30 @@
+LABEL  main
+STOREI  7  count1
+STOREI  9  count2
+STOREI  0  result
+STOREI  1  j
+LABEL  L1
+GE  j  count1  L2
+STOREI  1  k
+LABEL  L3
+GE  k  count2  L4
+LE  k  j  L5
+MULTI  j  k  $T1
+ADDI  result  $T1  $T2
+STOREI  $T2  result
+LABEL  L5
+NE  k  j  L6
+MULTI  j  k  $T3
+SUBI  result  $T3  $T4
+STOREI  $T4  result
+LABEL  L6
+ADDI  k  1  $T5
+STOREI  $T5  k
+JUMP  L3
+LABEL  L4
+ADDI  j  1  $T6
+STOREI  $T6  j
+JUMP  L1
+LABEL  L2
+WRITEI  result
+WRITES  newline

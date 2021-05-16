@@ -93,39 +93,39 @@ basic_stmt : assign_stmt | read_stmt | write_stmt | return_stmt;
 /* Basic Statements */
 
 assign_stmt : assign_expr ';';
-assign_expr : id ':=' expr;
-read_stmt : 'READ''(' id_list ')'';';
-write_stmt : 'WRITE''(' id_list ')'';';
+assign_expr : name=id ':=' exp=expr #AssignExprRule;
+read_stmt : 'READ''(' names=id_list ')'';' #ReadStmtRule;
+write_stmt : 'WRITE''(' names=id_list ')'';' #WriteStmtRule;
 
 return_stmt : 'RETURN' expr';';
 /* if_stmt */
 
-if_stmt : 'IF''('cond')' decl stmt_list else_part 'ENDIF' #IfStmtRule;
-else_part : 'ELSE' decl stmt_list #ElseStmtRule | #ElseEpsilonRule;
+if_stmt : 'IF''('con=cond')' dec=decl stm=stmt_list els=else_part 'ENDIF' #IfStmtRule;
+else_part : 'ELSE' dec=decl stm=stmt_list #ElseStmtRule | #ElseEpsilonRule;
 
-cond : expr compare expr;
+cond : exp1=expr com=compare exp2=expr #CondRule;
 
 compare :'='|'!='|'<='|'>='|'<'|'>';
 
 /* for_stmt */
 
-for_stmt : 'FOR''(' init_expr ';' cond ';' incr_expr ')' decl stmt_list 'ENDFOR' #ForStmtRule;
+for_stmt : 'FOR''(' ini=init_expr ';' con=cond ';' exp=incr_expr ')' dec=decl stm=stmt_list 'ENDFOR' #ForStmtRule;
 init_expr : assign_expr | ;
 incr_expr : assign_expr | ;
 
 /* Expressions */
 
-expr : expr_prefix term;
+expr : pre=expr_prefix ter=term #ExprRule;
 
-expr_prefix : expr_prefix term addop | ;
+expr_prefix : pre=expr_prefix ter=term op=addop #ExprPrefixRule | #ExprPrefixEpsRule;
 
-term : factor_prefix factor;
+term : pre=factor_prefix fac=factor #TermRule;
 
-factor_prefix : factor_prefix factor mulop| ;
+factor_prefix : pre=factor_prefix fac=factor op=mulop #FactorPrefixRule | #FactorPrefixEpsRule;
 
-factor : primary | call_expr;
+factor : pri=primary #FactorPrimaryRule | call=call_expr #FactorCallExprRule;
 
-primary : '(' expr ')' | id | INTLITERAL | FLOATLITERAL;
+primary : '(' exp=expr ')' #PrimaryExprRule | name=id #PrimaryIDRule | name=INTLITERAL #PrimaryINTRule | name=FLOATLITERAL #PrimaryFLOATRule;
 call_expr : id '(' expr_list ')';
 
 expr_list : expr expr_list_tail | ;

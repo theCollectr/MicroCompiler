@@ -1225,19 +1225,29 @@ public class MicroParser extends Parser {
 	}
 
 	public static class Assign_exprContext extends ParserRuleContext {
+		public Assign_exprContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_assign_expr; }
+	 
+		public Assign_exprContext() { }
+		public void copyFrom(Assign_exprContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class AssignExprRuleContext extends Assign_exprContext {
+		public IdContext name;
+		public ExprContext exp;
 		public IdContext id() {
 			return getRuleContext(IdContext.class,0);
 		}
 		public ExprContext expr() {
 			return getRuleContext(ExprContext.class,0);
 		}
-		public Assign_exprContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_assign_expr; }
+		public AssignExprRuleContext(Assign_exprContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitAssign_expr(this);
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitAssignExprRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1246,14 +1256,15 @@ public class MicroParser extends Parser {
 		Assign_exprContext _localctx = new Assign_exprContext(_ctx, getState());
 		enterRule(_localctx, 42, RULE_assign_expr);
 		try {
+			_localctx = new AssignExprRuleContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(189);
-			id();
+			((AssignExprRuleContext)_localctx).name = id();
 			setState(190);
 			match(T__4);
 			setState(191);
-			expr();
+			((AssignExprRuleContext)_localctx).exp = expr();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1268,16 +1279,25 @@ public class MicroParser extends Parser {
 	}
 
 	public static class Read_stmtContext extends ParserRuleContext {
-		public Id_listContext id_list() {
-			return getRuleContext(Id_listContext.class,0);
-		}
 		public Read_stmtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_read_stmt; }
+	 
+		public Read_stmtContext() { }
+		public void copyFrom(Read_stmtContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class ReadStmtRuleContext extends Read_stmtContext {
+		public Id_listContext names;
+		public Id_listContext id_list() {
+			return getRuleContext(Id_listContext.class,0);
+		}
+		public ReadStmtRuleContext(Read_stmtContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitRead_stmt(this);
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitReadStmtRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1286,6 +1306,7 @@ public class MicroParser extends Parser {
 		Read_stmtContext _localctx = new Read_stmtContext(_ctx, getState());
 		enterRule(_localctx, 44, RULE_read_stmt);
 		try {
+			_localctx = new ReadStmtRuleContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(193);
@@ -1293,7 +1314,7 @@ public class MicroParser extends Parser {
 			setState(194);
 			match(T__11);
 			setState(195);
-			id_list();
+			((ReadStmtRuleContext)_localctx).names = id_list();
 			setState(196);
 			match(T__12);
 			setState(197);
@@ -1312,16 +1333,25 @@ public class MicroParser extends Parser {
 	}
 
 	public static class Write_stmtContext extends ParserRuleContext {
-		public Id_listContext id_list() {
-			return getRuleContext(Id_listContext.class,0);
-		}
 		public Write_stmtContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_write_stmt; }
+	 
+		public Write_stmtContext() { }
+		public void copyFrom(Write_stmtContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class WriteStmtRuleContext extends Write_stmtContext {
+		public Id_listContext names;
+		public Id_listContext id_list() {
+			return getRuleContext(Id_listContext.class,0);
+		}
+		public WriteStmtRuleContext(Write_stmtContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitWrite_stmt(this);
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitWriteStmtRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1330,6 +1360,7 @@ public class MicroParser extends Parser {
 		Write_stmtContext _localctx = new Write_stmtContext(_ctx, getState());
 		enterRule(_localctx, 46, RULE_write_stmt);
 		try {
+			_localctx = new WriteStmtRuleContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(199);
@@ -1337,7 +1368,7 @@ public class MicroParser extends Parser {
 			setState(200);
 			match(T__11);
 			setState(201);
-			id_list();
+			((WriteStmtRuleContext)_localctx).names = id_list();
 			setState(202);
 			match(T__12);
 			setState(203);
@@ -1407,6 +1438,10 @@ public class MicroParser extends Parser {
 		}
 	}
 	public static class IfStmtRuleContext extends If_stmtContext {
+		public CondContext con;
+		public DeclContext dec;
+		public Stmt_listContext stm;
+		public Else_partContext els;
 		public CondContext cond() {
 			return getRuleContext(CondContext.class,0);
 		}
@@ -1439,15 +1474,15 @@ public class MicroParser extends Parser {
 			setState(210);
 			match(T__11);
 			setState(211);
-			cond();
+			((IfStmtRuleContext)_localctx).con = cond();
 			setState(212);
 			match(T__12);
 			setState(213);
-			decl();
+			((IfStmtRuleContext)_localctx).dec = decl();
 			setState(214);
-			stmt_list();
+			((IfStmtRuleContext)_localctx).stm = stmt_list();
 			setState(215);
-			else_part();
+			((IfStmtRuleContext)_localctx).els = else_part();
 			setState(216);
 			match(T__17);
 			}
@@ -1475,6 +1510,8 @@ public class MicroParser extends Parser {
 		}
 	}
 	public static class ElseStmtRuleContext extends Else_partContext {
+		public DeclContext dec;
+		public Stmt_listContext stm;
 		public DeclContext decl() {
 			return getRuleContext(DeclContext.class,0);
 		}
@@ -1511,9 +1548,9 @@ public class MicroParser extends Parser {
 				setState(218);
 				match(T__18);
 				setState(219);
-				decl();
+				((ElseStmtRuleContext)_localctx).dec = decl();
 				setState(220);
-				stmt_list();
+				((ElseStmtRuleContext)_localctx).stm = stmt_list();
 				}
 				break;
 			case T__17:
@@ -1538,6 +1575,20 @@ public class MicroParser extends Parser {
 	}
 
 	public static class CondContext extends ParserRuleContext {
+		public CondContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_cond; }
+	 
+		public CondContext() { }
+		public void copyFrom(CondContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class CondRuleContext extends CondContext {
+		public ExprContext exp1;
+		public CompareContext com;
+		public ExprContext exp2;
 		public List<ExprContext> expr() {
 			return getRuleContexts(ExprContext.class);
 		}
@@ -1547,13 +1598,10 @@ public class MicroParser extends Parser {
 		public CompareContext compare() {
 			return getRuleContext(CompareContext.class,0);
 		}
-		public CondContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_cond; }
+		public CondRuleContext(CondContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitCond(this);
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitCondRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1562,14 +1610,15 @@ public class MicroParser extends Parser {
 		CondContext _localctx = new CondContext(_ctx, getState());
 		enterRule(_localctx, 54, RULE_cond);
 		try {
+			_localctx = new CondRuleContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(225);
-			expr();
+			((CondRuleContext)_localctx).exp1 = expr();
 			setState(226);
-			compare();
+			((CondRuleContext)_localctx).com = compare();
 			setState(227);
-			expr();
+			((CondRuleContext)_localctx).exp2 = expr();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1637,6 +1686,11 @@ public class MicroParser extends Parser {
 		}
 	}
 	public static class ForStmtRuleContext extends For_stmtContext {
+		public Init_exprContext ini;
+		public CondContext con;
+		public Incr_exprContext exp;
+		public DeclContext dec;
+		public Stmt_listContext stm;
 		public Init_exprContext init_expr() {
 			return getRuleContext(Init_exprContext.class,0);
 		}
@@ -1672,21 +1726,21 @@ public class MicroParser extends Parser {
 			setState(232);
 			match(T__11);
 			setState(233);
-			init_expr();
+			((ForStmtRuleContext)_localctx).ini = init_expr();
 			setState(234);
 			match(T__5);
 			setState(235);
-			cond();
+			((ForStmtRuleContext)_localctx).con = cond();
 			setState(236);
 			match(T__5);
 			setState(237);
-			incr_expr();
+			((ForStmtRuleContext)_localctx).exp = incr_expr();
 			setState(238);
 			match(T__12);
 			setState(239);
-			decl();
+			((ForStmtRuleContext)_localctx).dec = decl();
 			setState(240);
-			stmt_list();
+			((ForStmtRuleContext)_localctx).stm = stmt_list();
 			setState(241);
 			match(T__26);
 			}
@@ -1801,19 +1855,29 @@ public class MicroParser extends Parser {
 	}
 
 	public static class ExprContext extends ParserRuleContext {
+		public ExprContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_expr; }
+	 
+		public ExprContext() { }
+		public void copyFrom(ExprContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class ExprRuleContext extends ExprContext {
+		public Expr_prefixContext pre;
+		public TermContext ter;
 		public Expr_prefixContext expr_prefix() {
 			return getRuleContext(Expr_prefixContext.class,0);
 		}
 		public TermContext term() {
 			return getRuleContext(TermContext.class,0);
 		}
-		public ExprContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_expr; }
+		public ExprRuleContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitExpr(this);
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitExprRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1822,12 +1886,13 @@ public class MicroParser extends Parser {
 		ExprContext _localctx = new ExprContext(_ctx, getState());
 		enterRule(_localctx, 64, RULE_expr);
 		try {
+			_localctx = new ExprRuleContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(251);
-			expr_prefix(0);
+			((ExprRuleContext)_localctx).pre = expr_prefix(0);
 			setState(252);
-			term();
+			((ExprRuleContext)_localctx).ter = term();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1842,6 +1907,28 @@ public class MicroParser extends Parser {
 	}
 
 	public static class Expr_prefixContext extends ParserRuleContext {
+		public Expr_prefixContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_expr_prefix; }
+	 
+		public Expr_prefixContext() { }
+		public void copyFrom(Expr_prefixContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class ExprPrefixEpsRuleContext extends Expr_prefixContext {
+		public ExprPrefixEpsRuleContext(Expr_prefixContext ctx) { copyFrom(ctx); }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitExprPrefixEpsRule(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class ExprPrefixRuleContext extends Expr_prefixContext {
+		public Expr_prefixContext pre;
+		public TermContext ter;
+		public AddopContext op;
 		public Expr_prefixContext expr_prefix() {
 			return getRuleContext(Expr_prefixContext.class,0);
 		}
@@ -1851,13 +1938,10 @@ public class MicroParser extends Parser {
 		public AddopContext addop() {
 			return getRuleContext(AddopContext.class,0);
 		}
-		public Expr_prefixContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_expr_prefix; }
+		public ExprPrefixRuleContext(Expr_prefixContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitExpr_prefix(this);
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitExprPrefixRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1878,6 +1962,10 @@ public class MicroParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			{
+			_localctx = new ExprPrefixEpsRuleContext(_localctx);
+			_ctx = _localctx;
+			_prevctx = _localctx;
+
 			}
 			_ctx.stop = _input.LT(-1);
 			setState(261);
@@ -1889,14 +1977,15 @@ public class MicroParser extends Parser {
 					_prevctx = _localctx;
 					{
 					{
-					_localctx = new Expr_prefixContext(_parentctx, _parentState);
+					_localctx = new ExprPrefixRuleContext(new Expr_prefixContext(_parentctx, _parentState));
+					((ExprPrefixRuleContext)_localctx).pre = _prevctx;
 					pushNewRecursionContext(_localctx, _startState, RULE_expr_prefix);
 					setState(255);
 					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
 					setState(256);
-					term();
+					((ExprPrefixRuleContext)_localctx).ter = term();
 					setState(257);
-					addop();
+					((ExprPrefixRuleContext)_localctx).op = addop();
 					}
 					} 
 				}
@@ -1918,19 +2007,29 @@ public class MicroParser extends Parser {
 	}
 
 	public static class TermContext extends ParserRuleContext {
+		public TermContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_term; }
+	 
+		public TermContext() { }
+		public void copyFrom(TermContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class TermRuleContext extends TermContext {
+		public Factor_prefixContext pre;
+		public FactorContext fac;
 		public Factor_prefixContext factor_prefix() {
 			return getRuleContext(Factor_prefixContext.class,0);
 		}
 		public FactorContext factor() {
 			return getRuleContext(FactorContext.class,0);
 		}
-		public TermContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_term; }
+		public TermRuleContext(TermContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitTerm(this);
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitTermRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1939,12 +2038,13 @@ public class MicroParser extends Parser {
 		TermContext _localctx = new TermContext(_ctx, getState());
 		enterRule(_localctx, 68, RULE_term);
 		try {
+			_localctx = new TermRuleContext(_localctx);
 			enterOuterAlt(_localctx, 1);
 			{
 			setState(264);
-			factor_prefix(0);
+			((TermRuleContext)_localctx).pre = factor_prefix(0);
 			setState(265);
-			factor();
+			((TermRuleContext)_localctx).fac = factor();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1959,6 +2059,20 @@ public class MicroParser extends Parser {
 	}
 
 	public static class Factor_prefixContext extends ParserRuleContext {
+		public Factor_prefixContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_factor_prefix; }
+	 
+		public Factor_prefixContext() { }
+		public void copyFrom(Factor_prefixContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class FactorPrefixRuleContext extends Factor_prefixContext {
+		public Factor_prefixContext pre;
+		public FactorContext fac;
+		public MulopContext op;
 		public Factor_prefixContext factor_prefix() {
 			return getRuleContext(Factor_prefixContext.class,0);
 		}
@@ -1968,13 +2082,18 @@ public class MicroParser extends Parser {
 		public MulopContext mulop() {
 			return getRuleContext(MulopContext.class,0);
 		}
-		public Factor_prefixContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_factor_prefix; }
+		public FactorPrefixRuleContext(Factor_prefixContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitFactor_prefix(this);
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitFactorPrefixRule(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class FactorPrefixEpsRuleContext extends Factor_prefixContext {
+		public FactorPrefixEpsRuleContext(Factor_prefixContext ctx) { copyFrom(ctx); }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitFactorPrefixEpsRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -1995,6 +2114,10 @@ public class MicroParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			{
+			_localctx = new FactorPrefixEpsRuleContext(_localctx);
+			_ctx = _localctx;
+			_prevctx = _localctx;
+
 			}
 			_ctx.stop = _input.LT(-1);
 			setState(274);
@@ -2006,14 +2129,15 @@ public class MicroParser extends Parser {
 					_prevctx = _localctx;
 					{
 					{
-					_localctx = new Factor_prefixContext(_parentctx, _parentState);
+					_localctx = new FactorPrefixRuleContext(new Factor_prefixContext(_parentctx, _parentState));
+					((FactorPrefixRuleContext)_localctx).pre = _prevctx;
 					pushNewRecursionContext(_localctx, _startState, RULE_factor_prefix);
 					setState(268);
 					if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
 					setState(269);
-					factor();
+					((FactorPrefixRuleContext)_localctx).fac = factor();
 					setState(270);
-					mulop();
+					((FactorPrefixRuleContext)_localctx).op = mulop();
 					}
 					} 
 				}
@@ -2035,19 +2159,37 @@ public class MicroParser extends Parser {
 	}
 
 	public static class FactorContext extends ParserRuleContext {
-		public PrimaryContext primary() {
-			return getRuleContext(PrimaryContext.class,0);
-		}
-		public Call_exprContext call_expr() {
-			return getRuleContext(Call_exprContext.class,0);
-		}
 		public FactorContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_factor; }
+	 
+		public FactorContext() { }
+		public void copyFrom(FactorContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class FactorPrimaryRuleContext extends FactorContext {
+		public PrimaryContext pri;
+		public PrimaryContext primary() {
+			return getRuleContext(PrimaryContext.class,0);
+		}
+		public FactorPrimaryRuleContext(FactorContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitFactor(this);
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitFactorPrimaryRule(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class FactorCallExprRuleContext extends FactorContext {
+		public Call_exprContext call;
+		public Call_exprContext call_expr() {
+			return getRuleContext(Call_exprContext.class,0);
+		}
+		public FactorCallExprRuleContext(FactorContext ctx) { copyFrom(ctx); }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitFactorCallExprRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2060,17 +2202,19 @@ public class MicroParser extends Parser {
 			_errHandler.sync(this);
 			switch ( getInterpreter().adaptivePredict(_input,14,_ctx) ) {
 			case 1:
+				_localctx = new FactorPrimaryRuleContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(277);
-				primary();
+				((FactorPrimaryRuleContext)_localctx).pri = primary();
 				}
 				break;
 			case 2:
+				_localctx = new FactorCallExprRuleContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(278);
-				call_expr();
+				((FactorCallExprRuleContext)_localctx).call = call_expr();
 				}
 				break;
 			}
@@ -2087,21 +2231,57 @@ public class MicroParser extends Parser {
 	}
 
 	public static class PrimaryContext extends ParserRuleContext {
-		public ExprContext expr() {
-			return getRuleContext(ExprContext.class,0);
-		}
-		public IdContext id() {
-			return getRuleContext(IdContext.class,0);
-		}
-		public TerminalNode INTLITERAL() { return getToken(MicroParser.INTLITERAL, 0); }
-		public TerminalNode FLOATLITERAL() { return getToken(MicroParser.FLOATLITERAL, 0); }
 		public PrimaryContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_primary; }
+	 
+		public PrimaryContext() { }
+		public void copyFrom(PrimaryContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class PrimaryExprRuleContext extends PrimaryContext {
+		public ExprContext exp;
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
+		}
+		public PrimaryExprRuleContext(PrimaryContext ctx) { copyFrom(ctx); }
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitPrimary(this);
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitPrimaryExprRule(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class PrimaryFLOATRuleContext extends PrimaryContext {
+		public Token name;
+		public TerminalNode FLOATLITERAL() { return getToken(MicroParser.FLOATLITERAL, 0); }
+		public PrimaryFLOATRuleContext(PrimaryContext ctx) { copyFrom(ctx); }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitPrimaryFLOATRule(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class PrimaryIDRuleContext extends PrimaryContext {
+		public IdContext name;
+		public IdContext id() {
+			return getRuleContext(IdContext.class,0);
+		}
+		public PrimaryIDRuleContext(PrimaryContext ctx) { copyFrom(ctx); }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitPrimaryIDRule(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class PrimaryINTRuleContext extends PrimaryContext {
+		public Token name;
+		public TerminalNode INTLITERAL() { return getToken(MicroParser.INTLITERAL, 0); }
+		public PrimaryINTRuleContext(PrimaryContext ctx) { copyFrom(ctx); }
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof MicroVisitor ) return ((MicroVisitor<? extends T>)visitor).visitPrimaryINTRule(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -2114,35 +2294,39 @@ public class MicroParser extends Parser {
 			_errHandler.sync(this);
 			switch (_input.LA(1)) {
 			case T__11:
+				_localctx = new PrimaryExprRuleContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(281);
 				match(T__11);
 				setState(282);
-				expr();
+				((PrimaryExprRuleContext)_localctx).exp = expr();
 				setState(283);
 				match(T__12);
 				}
 				break;
 			case IDENTIFIER:
+				_localctx = new PrimaryIDRuleContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(285);
-				id();
+				((PrimaryIDRuleContext)_localctx).name = id();
 				}
 				break;
 			case INTLITERAL:
+				_localctx = new PrimaryINTRuleContext(_localctx);
 				enterOuterAlt(_localctx, 3);
 				{
 				setState(286);
-				match(INTLITERAL);
+				((PrimaryINTRuleContext)_localctx).name = match(INTLITERAL);
 				}
 				break;
 			case FLOATLITERAL:
+				_localctx = new PrimaryFLOATRuleContext(_localctx);
 				enterOuterAlt(_localctx, 4);
 				{
 				setState(287);
-				match(FLOATLITERAL);
+				((PrimaryFLOATRuleContext)_localctx).name = match(FLOATLITERAL);
 				}
 				break;
 			default:

@@ -1,0 +1,25 @@
+LABEL  main
+STOREI  0  a
+STOREI  0  b
+STOREI  0  i
+LABEL  L1
+EQ  i  10  L2
+WRITES  msg
+WRITES  newline
+READI  p
+LE  p  10  L3
+ADDI  a  1  $T1
+STOREI  $T1  a
+JUMP  L4
+LABEL  L3
+ADDI  b  1  $T2
+STOREI  $T2  b
+LABEL  L4
+ADDI  i  1  $T3
+STOREI  $T3  i
+JUMP  L1
+LABEL  L2
+WRITEI  a
+WRITES  newline
+WRITEI  b
+WRITES  newline

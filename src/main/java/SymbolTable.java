@@ -40,6 +40,26 @@ public class SymbolTable {
         currentScope.addSymbol(type, name);
     }
 
+    public String getType(String name) {
+        for (Scope scope : scopes) {
+            String type = scope.getType(name);
+            if (type != null) {
+                return type;
+            }
+        }
+        return null;
+    }
+
+    public Symbol getSymbol(String name) {
+        for (Scope scope : scopes) {
+            Symbol symbol = scope.getSymbol(name);
+            if (symbol != null) {
+                return symbol;
+            }
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();

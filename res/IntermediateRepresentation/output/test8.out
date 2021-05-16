@@ -1,0 +1,39 @@
+LABEL  main
+STOREF  10.2  a
+STOREF  11.4  b
+LABEL  L1
+GT  a  80  L2
+NE  b  1  L3
+MULTF  1  a  $T1
+STOREF  $T1  g
+WRITEF  g
+WRITES  newline
+LABEL  L3
+NE  b  2  L4
+MULTF  2  a  $T2
+STOREF  $T2  p
+WRITEF  p
+WRITES  newline
+LABEL  L4
+NE  b  3  L5
+MULTF  3  a  $T3
+STOREF  $T3  k
+WRITEF  k
+WRITES  newline
+JUMP  L6
+LABEL  L5
+MULTF  4  a  $T4
+STOREF  $T4  u
+WRITEF  u
+WRITES  newline
+LABEL  L6
+ADDF  b  1  $T5
+STOREF  $T5  b
+ADDF  a  20  $T6
+STOREF  $T6  a
+JUMP  L1
+LABEL  L2
+WRITEF  a
+WRITES  newline
+WRITEF  b
+WRITES  newline

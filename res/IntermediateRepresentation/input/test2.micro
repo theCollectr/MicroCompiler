@@ -1,0 +1,22 @@
+PROGRAM test2
+BEGIN
+
+	STRING newline := "\n";
+	INT a,b,c;
+	
+	FUNCTION VOID main()
+	BEGIN
+		a := 20;
+		b := 30;
+		c := 40;
+		WRITE(a, newline, b, newline, c, newline);
+
+		c := b/2 + a*b + (a*b+c) + c/2;
+		WRITE (c, newline);
+		b := b*b + (a);
+		WRITE (b, newline);
+		a := b-c-1;
+		WRITE (a, newline);
+
+	END
+END
